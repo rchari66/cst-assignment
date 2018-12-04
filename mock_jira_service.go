@@ -26,7 +26,7 @@ func search(w http.ResponseWriter, r *http.Request) {
 func main() {
 	http.HandleFunc("/", sayHello)
 	http.HandleFunc("/rest/api/2/search", search)
-	if err := http.ListenAndServe(":8088", nil); err != nil {
+	if err := http.ListenAndServe(":9324", nil); err != nil {
 		panic(err)
 	}
 }
