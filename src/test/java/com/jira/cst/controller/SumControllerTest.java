@@ -65,7 +65,7 @@ public class SumControllerTest {
         Mockito.when(sqsService.push(Mockito.any(SQSMessage.class))).thenReturn(true);
 
         RequestBuilder requestBuilder = MockMvcRequestBuilders.get(
-                        "/issue/sum/query?query=search_query&name=description_name").accept(
+                        "/api/issue/sum?query=search_query&name=description_name").accept(
                         MediaType.APPLICATION_JSON);
 
         MvcResult result = mockMvc.perform(requestBuilder).andReturn();
@@ -86,16 +86,15 @@ public class SumControllerTest {
         Mockito.when(sqsService.push(Mockito.any(SQSMessage.class))).thenReturn(true);
 
         RequestBuilder requestBuilder = MockMvcRequestBuilders.get(
-                "/issue/sum/query?query=search_query&name=").accept(
+                "/api/issue/sum?query=search_query&name=").accept(
                 MediaType.APPLICATION_JSON);
 
         MvcResult result = mockMvc.perform(requestBuilder).andReturn();
 
         Assert.assertEquals(HttpStatus.BAD_REQUEST.value(), result.getResponse().getStatus());
 
-
         requestBuilder = MockMvcRequestBuilders.get(
-                "/issue/sum/query?query=&name=testName").accept(
+                "/api/issue/sum?query=&name=testName").accept(
                 MediaType.APPLICATION_JSON);
 
         result = mockMvc.perform(requestBuilder).andReturn();
