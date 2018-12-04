@@ -1,5 +1,6 @@
 package com.jira.cst.domain;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Fields {
 
     private int storyPoints;

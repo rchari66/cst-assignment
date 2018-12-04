@@ -3,6 +3,7 @@ package com.jira.cst.domain;
 /**
  * POJO for sqs message
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class SQSMessage {
 
     private String name;
