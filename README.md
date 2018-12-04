@@ -30,7 +30,11 @@ cd to project directory & run
 ```
 $ export JIRA_BASE_URL=http://localhost:4553
 $ export QUEUE_URL=http://localhost:9324
+
+# use either of below cmds to run jar
 $ java -jar target_jar/cst-0.0.1-SNAPSHOT.jar
+ (or)
+$ mvn clean install  && java -jar target/cst-0.0.1-SNAPSHOT.jar
 ```
 
 ## Step 3 : Test
@@ -47,3 +51,12 @@ Test amazon sqs(applied to only when run amazon sqs locally) for messages:
 # open testsqs(in cst-assigment) project in any IDE and run Test.java class
 ```
 Note: For testing purposes I have hardcoded the queue url in Test.java file @line#60. You can customise it as per your requirements.
+
+
+
+## TODO-Enhancements/improvements:
+* Create Docker for the service
+* Health check has to check health of it's dependent services(like Jira and sqs)
+* Add localization for messages
+* Improve exception handling(Intercept exceptions and send custom messages to client)
+* Add addition mock tests to test jira & sqs services
