@@ -4,7 +4,7 @@ To Run:
 
 Pre-requisite
 * Make sure JIRA service is running and env 'JIRA_BASE_URL' is set.
-* Make sure Amazon SQS service is running and env 'QUEUE_URL' is set
+* Make sure Amazon SQS service is running and env 'QUEUE_URL' is set. If `spring.profiles.active` is set to `prod` then `QUEUE_URL` is not required as the cst will connect to amazon sqs cloud service directly.
 
 ## Step 1 : Run JIRA and Amazon SQS
 Note: I have used mock_jira_service.go for Jira service. Use below command to run mock jira service.
