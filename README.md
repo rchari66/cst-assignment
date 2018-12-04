@@ -54,7 +54,7 @@ Note: For testing purposes I have hardcoded the queue url in Test.java file @lin
 
 
 
-## TODO-Enhancements/improvements:
+### TODO-Enhancements/improvements:
 * Create Docker for the service
 * Health check has to check health of it's dependent services(like Jira and sqs)
 * Add localization for messages
